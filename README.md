@@ -47,3 +47,7 @@ LightGBM >= 2.3.1
    * lightgbm.LGBMClassifier - multiclass - Random Forest
    * lightgbm.LGBMRegressor - Gradient Boosting Trees
    * lightgbm.LGBMRegressor - Random Forest
+
+# Test data
+   * [Examples of JSON Datrics models represendation](data)
+
