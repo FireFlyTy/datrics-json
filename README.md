@@ -1,8 +1,5 @@
-# datrics-json
-twine upload --repository testpypi dist/* 
-
-# model-json
-JSON serialization ans seserialization of scikit-learn, dask-ml and lightGBM model files, including transformers
+# Description
+Open source library for the **Datrics** models deserialization
 
 # Initial source
 The solution is the extension of https://github.com/mlrequest/sklearn-json library
@@ -10,61 +7,38 @@ The solution is the extension of https://github.com/mlrequest/sklearn-json libra
 
 # Getting Started
 
-model-json makes exporting/importing the models and transformers files to/from JSON simple
+datrics-json makes importing the models imlemented in the **Datrics AI platform** from their JSON representation
 
 ## Install
 ```
-pip install git+https://github.com/FireFlyTy/datrics-model-json
+pip install datrics-json
 ```
 ## Example Usage
 
 ```python
 import datrics_json as datjson
-from sklearn.ensemble import IsolationForest
 
-model = IsolationForest().fit(X)
+model_dict = datjson.from_json(file_name)
+deserialized_model = list(model_dict.get('trained_models').values())[0]['model']
 
-datjson.to_json(model, file_name)
-deserialized_model = datjson.from_json(file_name)
+sample_data = model_dict.get('sample_data')['init']
 
-deserialized_model.predict(X)
+deserialized_model.predict(sample_data)
 ```
 
 # Features
-The list of supported models is rapidly growing. If you have a request for a model or feature, please reach out to support@mlrequest.com.
-
-sklearn-json requires scikit-learn >= 0.21.3.
+sklearn-json requires scikit-learn >= 0.22.2.
+LightGBM >= 2.3.1
 
 ## Supported scikit-learn Models
-
-* Classification
-    * **`sklearn.linear_model.LogisticRegression`**
-    * *`sklearn.linear_model.Perceptron`*
-    * *`sklearn.discriminant_analysis.LinearDiscriminantAnalysis`*
-    * *`sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis`*
-    * **`sklearn.svm.SVC`**
-    * **`sklearn.ensemble.IsolationForest`**
-    * **`sklearn.clustering.KMeans`**
-    * **`sklearn.clustering.DBSCAN`**
-    * *`sklearn.naive_bayes.GaussianNB`*
-    * *`sklearn.naive_bayes.MultinomialNB`*
-    * *`sklearn.naive_bayes.ComplementNB`*
-    * *`sklearn.naive_bayes.BernoulliNB`*
-    * *`sklearn.tree.DecisionTreeClassifier`*
-    * *`sklearn.ensemble.RandomForestClassifier`*
-    * *`sklearn.ensemble.GradientBoostingClassifier`*
-    * *`sklearn.neural_network.MLPClassifier`*
-
-* Regression
-    * **`sklearn.linear_model.LinearRegression`**
-    * **`sklearn.linear_model.Ridge`**
-    * **`sklearn.linear_model.Lasso`**
-    * **`sklearn.linear_model.ElasticNet`**
-    * *`sklearn.svm.SVR`*
-    * *`sklearn.tree.DecisionTreeRegressor`*
-    * *`sklearn.ensemble.RandomForestRegressor`*
-    * *`sklearn.ensemble.GradientBoostingRegressor`*
-    * *`sklearn.neural_network.MLPRegressor`*
+ * **`sklearn.linear_model.LogisticRegression`**
+ * **`sklearn.ensemble.IsolationForest`**
+ * **`sklearn.clustering.KMeans`**
+ * **`sklearn.clustering.DBSCAN`**
+ * **`sklearn.linear_model.LinearRegression`**
+ * **`sklearn.linear_model.Ridge`**
+ * **`sklearn.linear_model.Lasso`**
+ * **`sklearn.linear_model.ElasticNet`**
 
 ## Supported lightGBM Models
    * **`lightgbm.LGBMClassifier - binary - Gradient Boosting Trees`**
@@ -73,13 +47,3 @@ sklearn-json requires scikit-learn >= 0.21.3.
    * **`lightgbm.LGBMClassifier - multiclass - Random Forest`**
    * **`lightgbm.LGBMRegressor - Gradient Boosting Trees`**
    * **`lightgbm.LGBMRegressor - Random Forest`**
-
-## Supported dask-ml Models
-   * **`dask-ml.preprocessing.LabelEncoder`**
-   * **`dask-ml.preprocessing.OneHotEncoder`**
-   * **`dask-ml.preprocessing.MinMaxScaler`**
-
-
-# Example
-   * [SKLEARN-TO-JSON Notebook](examples/SKLEARN-TO-JSON.ipynb)
-   * [Examples of JSON represendation of the models](examples/output)
