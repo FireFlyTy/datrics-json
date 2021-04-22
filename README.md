@@ -30,19 +30,19 @@ sklearn-json requires scikit-learn >= 0.22.2.
 LightGBM >= 2.3.1
 
 ## Supported scikit-learn Models
- * **`sklearn.linear_model.LogisticRegression`**
- * **`sklearn.ensemble.IsolationForest`**
- * **`sklearn.clustering.KMeans`**
- * **`sklearn.clustering.DBSCAN`**
- * **`sklearn.linear_model.LinearRegression`**
- * **`sklearn.linear_model.Ridge`**
- * **`sklearn.linear_model.Lasso`**
- * **`sklearn.linear_model.ElasticNet`**
+ * sklearn.linear_model.LogisticRegression
+ * sklearn.ensemble.IsolationForest
+ * sklearn.clustering.KMeans
+ * sklearn.clustering.DBSCAN
+ * sklearn.linear_model.LinearRegression
+ * sklearn.linear_model.Ridge
+ * sklearn.linear_model.Lasso
+ * sklearn.linear_model.ElasticNet
 
 ## Supported lightGBM Models
-   * **`lightgbm.LGBMClassifier - binary - Gradient Boosting Trees`**
-   * **`lightgbm.LGBMClassifier - multiclass - Gradient Boosting Trees`**
-   * **`lightgbm.LGBMClassifier - binary - Random Forest`**
-   * **`lightgbm.LGBMClassifier - multiclass - Random Forest`**
-   * **`lightgbm.LGBMRegressor - Gradient Boosting Trees`**
-   * **`lightgbm.LGBMRegressor - Random Forest`**
+   * lightgbm.LGBMClassifier - binary - Gradient Boosting Trees
+   * lightgbm.LGBMClassifier - multiclass - Gradient Boosting Trees
+   * lightgbm.LGBMClassifier - binary - Random Forest
+   * lightgbm.LGBMClassifier - multiclass - Random Forest
+   * lightgbm.LGBMRegressor - Gradient Boosting Trees
+   * lightgbm.LGBMRegressor - Random Forest
