@@ -1,18 +1,19 @@
+# Descripton
 Open source library for the **Datrics** models deserialization
 
-# Initial source
+## Initial source
 The solution is the extension of https://github.com/mlrequest/sklearn-json library
 
 
-# Getting Started
+## Getting Started
 
 datrics-json makes importing the models imlemented in the **Datrics AI platform** from their JSON representation
 
-## Install
+### Install
 ```
 pip install datrics-json
 ```
-## Example Usage
+### Example Usage
 
 ```python
 import datrics_json as datjson
@@ -25,11 +26,11 @@ sample_data = model_dict.get('sample_data')['init']
 deserialized_model.predict(sample_data)
 ```
 
-# Features
+## Features
 sklearn-json requires scikit-learn >= 0.22.2.
 LightGBM >= 2.3.1
 
-## Supported scikit-learn Models
+### Supported scikit-learn Models
  * sklearn.linear_model.LogisticRegression
  * sklearn.ensemble.IsolationForest
  * sklearn.clustering.KMeans
@@ -39,7 +40,7 @@ LightGBM >= 2.3.1
  * sklearn.linear_model.Lasso
  * sklearn.linear_model.ElasticNet
 
-## Supported lightGBM Models
+### Supported lightGBM Models
    * lightgbm.LGBMClassifier - binary - Gradient Boosting Trees
    * lightgbm.LGBMClassifier - multiclass - Gradient Boosting Trees
    * lightgbm.LGBMClassifier - binary - Random Forest
