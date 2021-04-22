@@ -1,4 +1,3 @@
-# Description
 Open source library for the **Datrics** models deserialization
 
 # Initial source
